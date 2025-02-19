@@ -9,4 +9,6 @@ class Song(models.Model):
     tags = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images')
     song = models.FileField(upload_to='images')
-    
+
+    def __str__(self):
+        return self.name

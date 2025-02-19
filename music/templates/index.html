@@ -71,35 +71,25 @@
 
         <!-- ########################CARDS ##############################-->
 
-        <h2>Trending sonng</h2>
+        <h2>Trending Songs</h2>
 
-        <div class = "row">
-
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'musicbeats/Music-Streaming-Wars.webp' %} " class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        {% comment %} <div class = "row"> {% endcomment %}
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {% for i in song %}
+            <div class= 'col'>
+              <div class="card" style="width: 18rem;">
+                <img src="/media/{{i.image}} " class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <p class="card-text">{{i.tags}}</p>
+                    <a href="#" class="btn btn-primary">Listen Song</a>
+                </div>
+              </div>
             </div>
-            </div>
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'musicbeats/Music-Streaming-Wars.webp' %} " class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-            </div>
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'musicbeats/Music-Streaming-Wars.webp' %} " class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-            </div>
+          {% endfor %}
         </div>
+
+        <hr>
 
         <h2>Your Fav Play List</h2>
 
